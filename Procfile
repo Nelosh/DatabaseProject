@@ -1,0 +1,1 @@
+web: target\universal\stage\bin\databaseproject.bat -Dhttp.port=${PORT}
