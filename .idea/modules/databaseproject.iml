@@ -25,12 +25,12 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.11.8:jar" level="project" />
-    <orderEntry type="library" name="SBT: com.github.mauricio:db-async-common_2.11:0.2.19:jar" level="project" />
-    <orderEntry type="library" name="SBT: com.github.mauricio:postgresql-async_2.11:0.2.19:jar" level="project" />
-    <orderEntry type="library" name="SBT: io.netty:netty-all:4.0.34.Final:jar" level="project" />
-    <orderEntry type="library" name="SBT: joda-time:joda-time:2.9.2:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.javassist:javassist:3.20.0-GA:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.joda:joda-convert:1.8.1:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.slf4j:slf4j-api:1.7.18:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.github.dblock.waffle:waffle-jna:1.7:jar" level="project" />
+    <orderEntry type="library" name="SBT: net.java.dev.jna:jna:4.1.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: net.java.dev.jna:jna-platform:4.1.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.postgresql:postgresql:9.4-1200-jdbc41:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.slf4j:slf4j-api:1.7.7:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.slf4j:slf4j-simple:1.7.7:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-swing:2.11.0-M7:jar" level="project" />
   </component>
 </module>

@@ -6,5 +6,7 @@ scalaVersion := "2.11.8"
 
 enablePlugins(JavaAppPackaging)
 
-libraryDependencies += "com.github.mauricio" %% "postgresql-async" % "0.2.19"
+libraryDependencies += "org.postgresql" % "postgresql" % "9.4-1200-jdbc41"
+libraryDependencies += "org.scala-lang" % "scala-swing" % "2.11.0-M7"
+
     
