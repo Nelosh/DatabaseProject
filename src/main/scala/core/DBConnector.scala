@@ -7,29 +7,34 @@ import java.sql.{ResultSet, DriverManager}
 import scala.collection.immutable.IndexedSeq
 
 object DBConnector {
+    import Shortcuts._
+
     Class.forName(driver)
 
     val conn = DriverManager.getConnection(url, username, password)
 
 
     def deleteFromById(table: String)(id: String): Unit = {
-        val sql: String = "DELETE FROM " + table + " WHERE id = " + id
+        val sql: String = deleteFrom + table + where + "id = " + id
         update(sql)
     }
 
-    def addData(table: String)(values: String*): Unit = {
-        var sql: String = "INSERT INTO " + table + " VALUES (DEFAULT,"
-        sql = values.foldLeft(sql)((sql, value) => sql + value + ",")
-        sql = sql.dropRight(1) +  ")"
+    def addData(table: String)(data: String*): Unit = {
+        val sql: String = insertInto + table + values ( valuesSplitedByCommas(default +: data) )
         update(sql)
     }
 
     def getValuesFromTable(table: String)(values: String*): Seq[Seq[String]] = {
-        query("SELECT " + values.foldLeft("")((sql, value) => sql + value + ",").dropRight(1) + "FROM " + table)
+        val sql = select + valuesSplitedByCommas(values) + from + table
+        query(sql)
+    }
+
+    def valuesSplitedByCommas(values: Seq[String]): String = {
+        values.foldLeft("")((sql, value) => sql + value + ",").dropRight(1)
     }
 
     def getAllFrom(table: String): Seq[Seq[String]] = {
-        query("SELECT * FROM " + table)
+        query(select + all + from + table)
     }
 
     def query(sql: String): Seq[Seq[String]] = {
@@ -58,4 +63,16 @@ object DBConnector {
     def closeConnection(): Unit = {
         conn.close()
     }
+}
+
+object Shortcuts {
+    val select = "SELECT "
+    val from = " FROM "
+    val where = " WHERE "
+    val deleteFrom = "DELETE FROM "
+    val insertInto = "INSERT INTO "
+    val all = "*"
+    val default = "DEFAULT"
+
+    def values(values: String): String = " VALUES (" + values + ")"
 }

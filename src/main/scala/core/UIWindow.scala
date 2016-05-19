@@ -10,17 +10,18 @@ class UIWindow extends MainFrame {
 
     val homePanel = homeScreen
     val raceEditor = raceEditorScreen
+
     val playerEditor = new BoxPanel(Orientation.Vertical) {
 
+        val races: Seq[(String, String)] = DBConnector.getValuesFromTable("race")("id", "name").map(x => (x.head, x.tail.head))
+
         val nameField = new TextField()
-
-        val races: Seq[(String, String)] = DBConnector.getValuesFromTable("player")("id", "name").map(x => (x.head, x.tail.head))
-
+        val raceCombo = new ComboBox(races.map(_._2))
 
 
         contents += new GridPanel(2, 4) {
             contents ++= Seq(new Label("Name"), new Label("Race"), new Label("Type"), new Label("Style"))
-            contents ++= Seq(new TextField(), new TextField(), new TextField(), new TextField())
+            contents ++= Seq(nameField, raceCombo, new TextField(), new TextField())
         }
 
     }
@@ -36,7 +37,6 @@ class UIWindow extends MainFrame {
                 changeToRaceEdit()
             }
             contents += Button("Magic button") {
-                changeToRaceEdit()
             }
         }
     }
