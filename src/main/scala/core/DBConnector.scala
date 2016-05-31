@@ -21,7 +21,6 @@ object DBConnector {
 
     def addDataSeq(table: String)(data: Seq[String]): Unit = {
         val sql: String = insertInto + table + values ( valuesSplitByCommas(default +: data) )
-        print(sql)
         update(sql)
     }
 
@@ -37,6 +36,12 @@ object DBConnector {
 
     def getByIdFrom(table: String)(id: Int): Seq[String] = {
         query(select + all + from + table + where + "id=" + id).flatten
+    }
+
+    def getGroupedByFromTables(tables: String*)(mainColumn: String, countColumns: String*)(foreignKeys: String*) = {
+        val sql = select + valuesSplitByCommas(Seq(mainColumn) ++ countColumns) + from + innerJoinedTables(tables, foreignKeys) + groupBy + mainColumn
+        print(sql)
+        query(sql)
     }
 
     def getAllFrom(table: String): Seq[Seq[String]] = {
@@ -79,6 +84,11 @@ object DBConnector {
         values.foldLeft("")((sql, value) => sql + value + ",").dropRight(1)
     }
 
+    def innerJoinedTables(tables: Seq[String], foreignKeys: Seq[String]): String = {
+        val firstTable = tables.head
+        tables.tail.foldLeft((firstTable, firstTable, foreignKeys))((left, right) => (left._1 + innerJoin + right + on + left._2 + ".id=" + right + "." + left._3.head, left._2, left._3.tail))._1
+    }
+
     def closeConnection(): Unit = {
         conn.close()
     }
@@ -90,6 +100,9 @@ object Shortcuts {
     val where = " WHERE "
     val deleteFrom = "DELETE FROM "
     val insertInto = "INSERT INTO "
+    val innerJoin = " INNER JOIN "
+    val groupBy = " GROUP BY "
+    val on = " ON "
     val all = "*"
     val default = "DEFAULT"
 

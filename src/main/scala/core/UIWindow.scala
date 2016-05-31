@@ -14,14 +14,23 @@ class UIWindow extends MainFrame {
 
 
     def homeScreen(): BoxPanel = {
-        new BoxPanel(Orientation.Vertical) {
-            contents += new Label("Here be dragons")
-            contents += Button("Edit race table") { changeToRaceEdit() }
-            contents += Button("Edit player table") { changeToPlayerEdit() }
-            contents += Button("Edit fleet table") { changeToFleetEdit() }
-            contents += Button("Edit ship table") { changeToShipEdit() }
-            contents += Button("Edit system table") { changeToSystemEdit() }
-            contents += Button("Edit planet table") { changeToPlanetEdit() }
+        new BoxPanel(Orientation.Horizontal) {
+            contents += new BoxPanel(Orientation.Vertical) {
+                contents += new Label("Forms")
+                contents += Button("Edit race table") { changeToRaceEdit() }
+                contents += Button("Edit player table") { changeToPlayerEdit() }
+                contents += Button("Edit fleet table") { changeToFleetEdit() }
+                contents += Button("Edit ship table") { changeToShipEdit() }
+                contents += Button("Edit system table") { changeToSystemEdit() }
+                contents += Button("Edit planet table") { changeToPlanetEdit() }
+                contents += Swing.VGlue
+            }
+            contents += Swing.HGlue
+            contents += new BoxPanel(Orientation.Vertical) {
+                contents += new Label("Queries")
+                contents += Button("Race Statistics") { changeToRaceStatistics() }
+                contents += Swing.VGlue
+            }
         }
     }
 
@@ -188,6 +197,21 @@ class UIWindow extends MainFrame {
         }
     }
 
+    def raceStatistics: BoxPanel = {
+        new BoxPanel(Orientation.Vertical) with QueryResult{
+            contents += new ScrollPane(dataTable)
+            contents += new BoxPanel(Orientation.Horizontal) {
+                contents += Button("Back") { changeToHome() }
+                contents += Swing.HGlue
+            }
+
+            override def rawData: Array[Array[Any]] = DBConnector.getGroupedByFromTables("race", "system", "fleet")("race.name", "COUNT(system.id)", "COUNT(fleet.id)")("ownerid", "raceid").map(_.map((x: String) => x: Any).toArray).toArray
+
+            override def columnNames: Seq[String] = Seq("Race", "Systems", "Army")
+        }
+    }
+
+    def findPlayers: BoxPanel = ???
 
     def getIdFromSelectedRow(table: Table): String = {
         table(table.peer.getSelectedRow, table.peer.getColumn("ID").getModelIndex).asInstanceOf[String]
@@ -209,6 +233,7 @@ class UIWindow extends MainFrame {
     def changeToShipEdit(): Unit = changeScreen(() => shipEditorScreen)
     def changeToSystemEdit(): Unit = changeScreen(() => systemEditorScreen)
     def changeToPlanetEdit(): Unit = changeScreen(() => planetEditorScreen)
+    def changeToRaceStatistics(): Unit = changeScreen(() => raceStatistics)
 
     def changeScreen(f: () => Component) = {
         val currentSize = size
