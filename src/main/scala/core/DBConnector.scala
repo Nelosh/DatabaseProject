@@ -29,6 +29,12 @@ object DBConnector {
         update(sql)
     }
 
+    def getIdFromWhere(table: String)(condition: String) = {
+        val sql = select + "id" + from + table + where + condition
+        query(sql)
+
+    }
+
     def getValuesFromTable(table: String)(values: String*): Seq[Seq[String]] = {
         val sql = select + valuesSplitByCommas(values) + from + table
         query(sql)
@@ -49,6 +55,8 @@ object DBConnector {
     }
 
     def getAllFromWhere(table: String)(condition: String): Seq[Seq[String]] = {
+        val sql = select + all + from + table + where + condition
+        print(sql)
         query(select + all + from + table + where + condition)
     }
 

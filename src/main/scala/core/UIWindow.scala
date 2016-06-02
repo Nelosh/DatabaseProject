@@ -1,6 +1,7 @@
 package core
 
-import java.awt.{Dimension, Font}
+import java.awt.{Shape, Graphics2D, Dimension, Font}
+import javax.swing.JTable.PrintMode
 
 import scala.swing._
 
@@ -29,6 +30,7 @@ class UIWindow extends MainFrame {
             contents += new BoxPanel(Orientation.Vertical) {
                 contents += new Label("Queries")
                 contents += Button("Race Statistics") { changeToRaceStatistics() }
+                contents += Button("Find Player") { changeToFindPlayer() }
                 contents += Swing.VGlue
             }
         }
@@ -198,11 +200,13 @@ class UIWindow extends MainFrame {
     }
 
     def raceStatistics: BoxPanel = {
-        new BoxPanel(Orientation.Vertical) with QueryResult{
-            contents += new ScrollPane(dataTable)
+        new BoxPanel(Orientation.Vertical) with QueryResult {
+            val currentPane = new ScrollPane(initialTable)
+            contents += currentPane
             contents += new BoxPanel(Orientation.Horizontal) {
-                contents += Button("Back") { changeToHome() }
+                contents += Button("Print") { createPDF(currentPane.contents.head.asInstanceOf[Table]) }
                 contents += Swing.HGlue
+                contents += Button("Back") { changeToHome() }
             }
 
             override def rawData: Array[Array[Any]] = DBConnector.getGroupedByFromTables("race", "system", "fleet")("race.name", "COUNT(system.id)", "COUNT(fleet.id)")("ownerid", "raceid").map(_.map((x: String) => x: Any).toArray).toArray
@@ -211,18 +215,54 @@ class UIWindow extends MainFrame {
         }
     }
 
-    def findPlayers: BoxPanel = ???
+    def findPlayers: BoxPanel = {
+        new BoxPanel(Orientation.Vertical) with QueryResult {
+
+            val currentPane = new ScrollPane(initialTable)
+            val playerNameField = new TextField("") {
+                maximumSize = new Dimension(Int.MaxValue, 80)
+            }
+
+            contents += new BoxPanel(Orientation.Horizontal) {
+                contents += new Label("Player: ")
+                contents += playerNameField
+                contents += Button("Search players") { search() }
+                contents += Swing.HGlue
+            }
+            contents += currentPane
+            contents += new BoxPanel(Orientation.Horizontal) {
+                contents += Button("Print") { createPDF(currentPane.contents.head.asInstanceOf[Table]) }
+                contents += Swing.HGlue
+                contents += Button("Back") { changeToHome() }
+            }
+
+            def search(): Unit = {
+                currentPane.contents = dataTable
+                normalizeFont(currentPane)
+            }
+
+            override def initialRawData: Array[Array[Any]] = DBConnector.getAllFromWhere("player")("name LIKE ''" ).map(_.map((x: String) => x: Any).toArray).toArray
+
+            override def rawData: Array[Array[Any]] = DBConnector.getAllFromWhere("player")("name LIKE '%" + playerNameField.text + "%'" ).map(_.map((x: String) => x: Any).toArray).toArray
+
+            override def columnNames: Seq[String] = DBConnector.getColumnNames("player").flatten.reverse
+        }
+    }
+
+    def createPDF(table: Table) = {
+        table.peer.print(PrintMode.FIT_WIDTH)
+    }
 
     def getIdFromSelectedRow(table: Table): String = {
         table(table.peer.getSelectedRow, table.peer.getColumn("ID").getModelIndex).asInstanceOf[String]
     }
 
     def normalizeFont(component: Component): Unit = {
-        val standartFont = new Font("serif", Font.PLAIN, 50)
+        val standardFont = new Font("serif", Font.PLAIN, 40)
 
         component match {
             case container: Container => container.contents.foreach(normalizeFont)
-            case _ => component.font = standartFont
+            case _ => component.font = standardFont
         }
     }
 
@@ -234,6 +274,7 @@ class UIWindow extends MainFrame {
     def changeToSystemEdit(): Unit = changeScreen(() => systemEditorScreen)
     def changeToPlanetEdit(): Unit = changeScreen(() => planetEditorScreen)
     def changeToRaceStatistics(): Unit = changeScreen(() => raceStatistics)
+    def changeToFindPlayer(): Unit = changeScreen(() => findPlayers)
 
     def changeScreen(f: () => Component) = {
         val currentSize = size

@@ -15,4 +15,11 @@ trait QueryResult {
         peer.setRowHeight(70)
     }
 
+    def initialRawData: Array[Array[Any]] = rawData
+    def initialTable = new Table(initialRawData, columnNames) {
+        selection.elementMode = Table.ElementMode.None
+        peer.getTableHeader.setFont(new swing.Font("serif", Font.PLAIN, 50))
+        peer.setRowHeight(70)
+    }
+
 }
