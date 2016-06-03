@@ -2,6 +2,7 @@ package core
 
 
 import java.awt.Font
+import javax.swing.JTable.PrintMode
 
 import scala.swing._
 
@@ -9,6 +10,7 @@ trait Editor {
 
     private val currentAdditionComponents: Seq[Component] = initialComponents
     private val currentTable = dataTable
+    protected val currentPane = new ScrollPane(currentTable)
 
     def tableName: String
 
@@ -17,8 +19,12 @@ trait Editor {
     def componentValues: Map[Component, String]
     def initialComponents: Seq[Component]
 
-    def addButtonAction(): Unit
-    def removeButtonAction(): Unit
+    def addButtonAction(): Unit = {
+        refreshTable()
+    }
+    def removeButtonAction(): Unit = {
+        refreshTable()
+    }
     def backButtonAction(): Unit
 
     def additionalComponents: Seq[Component] = currentAdditionComponents
@@ -30,8 +36,9 @@ trait Editor {
             new BoxPanel(Orientation.Horizontal) {
                 contents += addButton
                 contents += Swing.HGlue
+                contents += Button("Print") { createPDF(currentPane.contents.head.asInstanceOf[Table]) }
             },
-            new ScrollPane(currentTable),
+            currentPane,
             backAndRemoveSection
         )
     }
@@ -94,6 +101,24 @@ trait Editor {
             Some(table(table.peer.getSelectedRow, table.peer.getColumn("id").getModelIndex).asInstanceOf[String])
         else
             None
+    }
+
+    private def normalizeFont(component: Component): Unit = {
+        val standardFont = new Font("serif", Font.PLAIN, 40)
+
+        component match {
+            case container: Container => container.contents.foreach(normalizeFont)
+            case _ => component.font = standardFont
+        }
+    }
+
+    protected def refreshTable(): Unit = {
+        currentPane.contents = dataTable
+        normalizeFont(currentPane.contents.head)
+    }
+
+    def createPDF(table: Table) = {
+        table.peer.print(PrintMode.FIT_WIDTH)
     }
 
 }

@@ -62,8 +62,6 @@ class UIWindow extends MainFrame {
                 )
             }
 
-            override def addButtonAction(): Unit = refresh()
-            override def removeButtonAction(): Unit = refresh()
             override def backButtonAction(): Unit = changeToHome()
         }
     }
@@ -83,8 +81,6 @@ class UIWindow extends MainFrame {
 
             override def componentValues: Map[Component, String] = (0 to 3).map(keyValue).toMap
 
-            override def addButtonAction(): Unit = refresh()
-            override def removeButtonAction(): Unit = refresh()
             override def backButtonAction(): Unit = changeToHome()
 
         }
@@ -108,10 +104,6 @@ class UIWindow extends MainFrame {
 
             override def componentValues: Map[Component, String] = Map(additionalComponents.head -> link.head.text) ++ (1 to 4).map(keyValue)
 
-            override def nextButtonAction(): Unit = refresh()
-            override def previousButtonAction(): Unit = refresh()
-            override def addButtonAction(): Unit = refresh()
-            override def removeButtonAction(): Unit = refresh()
             override def backButtonAction(): Unit = changeToHome()
 
             def raceName = startingLink(1).text
@@ -135,10 +127,6 @@ class UIWindow extends MainFrame {
 
             override def componentValues: Map[Component, String] = Map(additionalComponents.head -> link.head.text) ++ (1 to 3).map(keyValue)
 
-            override def nextButtonAction(): Unit = refresh()
-            override def previousButtonAction(): Unit = refresh()
-            override def addButtonAction(): Unit = refresh()
-            override def removeButtonAction(): Unit = refresh()
             override def backButtonAction(): Unit = changeToHome()
 
             def fleetName = startingLink(4).text
@@ -162,10 +150,6 @@ class UIWindow extends MainFrame {
 
             override def componentValues: Map[Component, String] = Map(keyValue(0), additionalComponents(1) -> link.head.text, keyValue(2))
 
-            override def nextButtonAction(): Unit = refresh()
-            override def addButtonAction(): Unit = refresh()
-            override def previousButtonAction(): Unit = refresh()
-            override def removeButtonAction(): Unit = refresh()
             override def backButtonAction(): Unit = changeToHome()
 
             def raceName = startingLink(1).text
@@ -189,10 +173,6 @@ class UIWindow extends MainFrame {
 
             override def componentValues: Map[Component, String] =  Map(additionalComponents(1) -> link.head.text) ++ (2 to 3).map(keyValue) + keyValue(0)
 
-            override def nextButtonAction(): Unit = refresh()
-            override def addButtonAction(): Unit = refresh()
-            override def previousButtonAction(): Unit = refresh()
-            override def removeButtonAction(): Unit = refresh()
             override def backButtonAction(): Unit = changeToHome()
 
             def systemName = startingLink(1).text

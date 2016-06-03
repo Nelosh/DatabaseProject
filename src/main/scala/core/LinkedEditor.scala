@@ -12,18 +12,17 @@ trait LinkedEditor extends Editor{
         else
             currentLink
     }
-    def startingLink: Seq[Label] = {
-        val link = Saver.load(tableName)
-        if (link.isDefined)
-            link.get.asInstanceOf[Seq[Label]]
-        else
-            getLabeledLink(getAllIDs.head)
-    }
+    def startingLink: Seq[Label] = getLabeledLink(getAllIDs.head)
+
 
     def linkTableName: String
 
-    def previousButtonAction(): Unit
-    def nextButtonAction(): Unit
+    def previousButtonAction(): Unit = {
+        refreshTable()
+    }
+    def nextButtonAction(): Unit = {
+        refreshTable()
+    }
 
     override def formPanel = {
         Seq(
@@ -34,8 +33,9 @@ trait LinkedEditor extends Editor{
             new BoxPanel(Orientation.Horizontal) {
                 contents += addButton
                 contents += Swing.HGlue
+                contents += Button("Print") { createPDF(currentPane.contents.head.asInstanceOf[Table]) }
             },
-            new ScrollPane(dataTable),
+            currentPane,
             backAndRemoveSection
         )
     }
@@ -69,15 +69,11 @@ trait LinkedEditor extends Editor{
         }
     }
 
-    def saveData(): Unit = {
-        Saver.save(tableName, currentLink)
-    }
-
     def previousLink(): Unit = {
         val found = getAllIDs.takeWhile(current => current != link.head.text.toInt)
         if (found.nonEmpty) {
-            currentLink = getLabeledLink(found.reverse.head)
-            saveData()
+            val newLink = getLabeledLink(found.reverse.head)
+            currentLink.foldLeft(newLink)((newLink, current) => {current.text = newLink.head.text; newLink.tail} )
         }
 
     }
@@ -85,8 +81,8 @@ trait LinkedEditor extends Editor{
     def nextLink(): Unit = {
         val found = getAllIDs.dropWhile(current => current != link.head.text.toInt)
         if (found.tail.nonEmpty) {
-            currentLink = getLabeledLink(found.tail.head)
-            saveData()
+            val newLink = getLabeledLink(found.tail.head)
+            currentLink.foldLeft(newLink)((newLink, current) => {current.text = newLink.head.text; newLink.tail} )
         }
 
     }

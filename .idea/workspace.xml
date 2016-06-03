@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="databaseproject:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="86c78f2b-9ea8-49f6-b2f6-c017f9a631a1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/core/QueryResult.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_scala_lang_scala_library_2_11_8_jar.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_scala_lang_scala_library_2_11_8_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/databaseproject-build.iml" afterPath="$PROJECT_DIR$/.idea/modules/databaseproject-build.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sbt.xml" afterPath="$PROJECT_DIR$/.idea/sbt.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/core/Saver.scala" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/core/DBConnector.scala" afterPath="$PROJECT_DIR$/src/main/scala/core/DBConnector.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/core/Editor.scala" afterPath="$PROJECT_DIR$/src/main/scala/core/Editor.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/core/LinkedEditor.scala" afterPath="$PROJECT_DIR$/src/main/scala/core/LinkedEditor.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/core/UIWindow.scala" afterPath="$PROJECT_DIR$/src/main/scala/core/UIWindow.scala" />
     </list>
     <ignored path="DatabaseProject.iws" />
@@ -73,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/scala/core/DBConnector.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="e#15#30#0" expanded="true" />
               </folding>
@@ -85,25 +89,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/scala/core/UIWindow.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="211" column="5" selection-start-line="211" selection-start-column="5" selection-end-line="211" selection-end-column="5" />
+              <caret line="231" column="4" selection-start-line="231" selection-start-column="4" selection-end-line="233" selection-end-column="5" />
               <folding>
-                <element signature="e#1325#2562#0" expanded="false" />
-                <element signature="e#2568#3525#0" expanded="false" />
-                <element signature="e#3531#4726#0" expanded="false" />
-                <element signature="e#4732#5926#0" expanded="false" />
-                <element signature="e#5932#7064#0" expanded="false" />
-                <element signature="e#7070#8310#0" expanded="false" />
+                <element signature="e#14#66#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Saver.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/core/Saver.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -112,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/scala/core/Editor.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="104" />
               <folding />
             </state>
           </provider>
@@ -122,7 +111,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/scala/core/QueryResult.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+              <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
               <folding>
                 <element signature="e#14#34#0" expanded="true" />
               </folding>
@@ -130,20 +119,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkedEditor.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LinkedEditor.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/core/LinkedEditor.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.6861423">
+              <caret line="35" column="104" selection-start-line="35" selection-start-column="104" selection-end-line="35" selection-end-column="104" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Config.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/core/Config.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09756097">
+            <state vertical-scroll-proportion="0.0">
               <caret line="5" column="166" selection-start-line="5" selection-start-column="151" selection-end-line="5" selection-end-column="166" />
               <folding />
             </state>
@@ -154,17 +143,7 @@
         <entry file="file://$PROJECT_DIR$/build.sbt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plugins.sbt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="70" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -199,7 +178,6 @@
         <option value="C:/Program Files/Java/jdk1.7.0_67/src.zip!/java/sql/ResultSet.java" />
         <option value="C:/Program Files/Java/jdk1.7.0_67/src.zip!/java/sql/Connection.java" />
         <option value="$PROJECT_DIR$/src/main/scala/core/Config.scala" />
-        <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/scala/core/myForm.form" />
         <option value="$PROJECT_DIR$/src/main/scala/core/MyForm.form" />
         <option value="$PROJECT_DIR$/src/main/scala/core/Main.scala" />
@@ -208,11 +186,13 @@
         <option value="$PROJECT_DIR$/src/main/scala/core/Saver.scala" />
         <option value="C:/Program Files/Java/jdk1.7.0_67/src.zip!/javax/swing/table/DefaultTableColumnModel.java" />
         <option value="C:/Program Files/Java/jdk1.7.0_67/src.zip!/javax/swing/JTable.java" />
-        <option value="$PROJECT_DIR$/src/main/scala/core/LinkedEditor.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/core/QueryResult.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/core/DBConnector.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/core/Editor.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/core/QueryResult.scala" />
+        <option value="C:/Program Files/Java/jdk1.7.0_67/src.zip!/javax/swing/JComponent.java" />
+        <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/scala/core/UIWindow.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/core/Editor.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/core/LinkedEditor.scala" />
       </list>
     </option>
   </component>
@@ -229,10 +209,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="288" />
-    <option name="y" value="90" />
-    <option name="width" value="3114" />
-    <option name="height" value="1944" />
+    <option name="x" value="752" />
+    <option name="y" value="466" />
+    <option name="width" value="2318" />
+    <option name="height" value="1563" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -259,8 +239,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -337,41 +318,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DatabaseProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DatabaseProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DatabaseProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DatabaseProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -386,6 +334,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Scala" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -875,7 +826,7 @@
     </list>
   </component>
   <component name="SbtLocalSettings">
-    <option name="lastUpdateTimestamp" value="1464706143828" />
+    <option name="lastUpdateTimestamp" value="1464953496997" />
     <option name="availableProjects">
       <map>
         <entry>
@@ -941,7 +892,11 @@
       <workItem from="1464438542706" duration="15000" />
       <workItem from="1464438713938" duration="3541000" />
       <workItem from="1464517951566" duration="6766000" />
-      <workItem from="1464706117019" duration="1381000" />
+      <workItem from="1464706117019" duration="2749000" />
+      <workItem from="1464775470787" duration="15350000" />
+      <workItem from="1464868417359" duration="3317000" />
+      <workItem from="1464886921722" duration="618000" />
+      <workItem from="1464953469926" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="minors">
       <created>1463668634972</created>
@@ -961,11 +916,23 @@
       <option name="project" value="LOCAL" />
       <updated>1464182906209</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Last">
+      <created>1464714584171</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1464714584171</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Final working version">
+      <created>1464868470648</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1464868470648</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132134000" />
+    <option name="totallyTimeSpent" value="152818000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -977,35 +944,35 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="288" y="90" width="3114" height="1944" extended-state="0" />
-    <editor active="true" />
+    <frame x="752" y="466" width="2318" height="1563" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297978" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32955262" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944983" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16029663" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2607466" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1979511" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26860985" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24327418" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24327418" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32621464" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5528205" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995194" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1023,11 +990,13 @@
     <MESSAGE value="minors" />
     <MESSAGE value="words" />
     <MESSAGE value="Work with tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with tables" />
+    <MESSAGE value="Last" />
+    <MESSAGE value="Final working version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final working version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1036,31 +1005,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Procfile">
+    <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="57" selection-start-line="0" selection-start-column="57" selection-end-line="0" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="68" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/core/Main.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1328,19 +1276,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="70" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1352,28 +1291,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/core/Saver.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/core/Config.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <caret line="5" column="166" selection-start-line="5" selection-start-column="151" selection-end-line="5" selection-end-column="166" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/core/LinkedEditor.scala">
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-swing/srcs/scala-swing-2.11.0-M7-sources.jar!/scala/swing/ScrollPane.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="45" column="6" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/com.itextpdf/itextpdf/srcs/itextpdf-5.5.6-sources.jar!/com/itextpdf/text/pdf/PdfContentByte.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="4308" column="31" selection-start-line="4308" selection-start-column="31" selection-end-line="4308" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/com.itextpdf/itextpdf/srcs/itextpdf-5.5.6-sources.jar!/com/itextpdf/text/pdf/PdfWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9537038">
+          <caret line="742" column="29" selection-start-line="742" selection-start-column="29" selection-end-line="742" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_67/src.zip!/javax/swing/JComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1195" column="16" selection-start-line="1195" selection-start-column="16" selection-end-line="1195" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/core/DBConnector.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="e#15#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/core/UIWindow.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="231" column="4" selection-start-line="231" selection-start-column="4" selection-end-line="233" selection-end-column="5" />
+          <folding>
+            <element signature="e#14#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1381,7 +1358,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/core/QueryResult.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
           <folding>
             <element signature="e#14#34#0" expanded="true" />
           </folding>
@@ -1391,33 +1368,109 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/core/Editor.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="104" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/core/UIWindow.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/core/LinkedEditor.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="211" column="5" selection-start-line="211" selection-start-column="5" selection-end-line="211" selection-end-column="5" />
-          <folding>
-            <element signature="e#1325#2562#0" expanded="false" />
-            <element signature="e#2568#3525#0" expanded="false" />
-            <element signature="e#3531#4726#0" expanded="false" />
-            <element signature="e#4732#5926#0" expanded="false" />
-            <element signature="e#5932#7064#0" expanded="false" />
-            <element signature="e#7070#8310#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/core/Config.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09756097">
-          <caret line="5" column="166" selection-start-line="5" selection-start-column="151" selection-end-line="5" selection-end-column="166" />
+        <state vertical-scroll-proportion="0.6861423">
+          <caret line="35" column="104" selection-start-line="35" selection-start-column="104" selection-end-line="35" selection-end-column="104" />
           <folding />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>databaseproject:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.36644855" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>lib</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>databaseproject</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>SBT: com.github.dblock.waffle:waffle-jna:1.7:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
