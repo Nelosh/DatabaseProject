@@ -74,8 +74,10 @@ trait LinkedEditor extends Editor{
         if (found.nonEmpty) {
             val newLink = getLabeledLink(found.reverse.head)
             currentLink.foldLeft(newLink)((newLink, current) => {current.text = newLink.head.text; newLink.tail} )
-        }
 
+            refreshAdditionalComponents()
+
+        }
     }
 
     def nextLink(): Unit = {
@@ -85,6 +87,19 @@ trait LinkedEditor extends Editor{
             currentLink.foldLeft(newLink)((newLink, current) => {current.text = newLink.head.text; newLink.tail} )
         }
 
+        refreshAdditionalComponents()
+
+    }
+
+    def refreshAdditionalComponents(): Unit = {
+        val newComponents = initialComponents
+        currentAdditionComponents.foldLeft(newComponents)((newComponent, current) => {
+            current match {
+                case l: Label => l.text = newComponent.head.asInstanceOf[Label].text
+                case _ =>
+            }
+            newComponent.tail
+        })
     }
 
     def getLabeledLink(id: Int): Seq[Label] = {

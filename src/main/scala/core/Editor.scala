@@ -8,7 +8,7 @@ import scala.swing._
 
 trait Editor {
 
-    private val currentAdditionComponents: Seq[Component] = initialComponents
+    protected val currentAdditionComponents: Seq[Component] = initialComponents
     private val currentTable = dataTable
     protected val currentPane = new ScrollPane(currentTable)
 

@@ -106,7 +106,7 @@ class UIWindow extends MainFrame {
 
             override def backButtonAction(): Unit = changeToHome()
 
-            def raceName = startingLink(1).text
+            def raceName = link(1).text
         }
     }
 
@@ -129,7 +129,7 @@ class UIWindow extends MainFrame {
 
             override def backButtonAction(): Unit = changeToHome()
 
-            def fleetName = startingLink(4).text
+            def fleetName = link(4).text
         }
     }
 
@@ -152,7 +152,7 @@ class UIWindow extends MainFrame {
 
             override def backButtonAction(): Unit = changeToHome()
 
-            def raceName = startingLink(1).text
+            def raceName = link(1).text
         }
     }
 
@@ -175,7 +175,7 @@ class UIWindow extends MainFrame {
 
             override def backButtonAction(): Unit = changeToHome()
 
-            def systemName = startingLink(1).text
+            def systemName = link(1).text
         }
     }
 
@@ -189,7 +189,7 @@ class UIWindow extends MainFrame {
                 contents += Button("Back") { changeToHome() }
             }
 
-            override def rawData: Array[Array[Any]] = DBConnector.getGroupedByFromTables("race", "system", "fleet")("race.name", "COUNT(system.id)", "COUNT(fleet.id)")("ownerid", "raceid").map(_.map((x: String) => x: Any).toArray).toArray
+            override def rawData: Array[Array[Any]] = DBConnector.getGroupedByFromTables("race", "system", "fleet")("race.name", "COUNT(DISTINCT system.id)", "COUNT(DISTINCT fleet.id)")("ownerid", "raceid").map(_.map((x: String) => x: Any).toArray).toArray
 
             override def columnNames: Seq[String] = Seq("Race", "Systems", "Army")
         }

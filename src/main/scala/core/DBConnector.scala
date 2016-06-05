@@ -45,8 +45,8 @@ object DBConnector {
     }
 
     def getGroupedByFromTables(tables: String*)(mainColumn: String, countColumns: String*)(foreignKeys: String*) = {
-        val sql = select + valuesSplitByCommas(Seq(mainColumn) ++ countColumns) + from + innerJoinedTables(tables, foreignKeys) + groupBy + mainColumn
-        print(sql)
+        val sql = select + valuesSplitByCommas(Seq(mainColumn) ++ countColumns) +
+            from + innerJoinedTables(tables, foreignKeys) + groupBy + mainColumn
         query(sql)
     }
 
